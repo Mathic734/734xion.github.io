@@ -89,8 +89,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>字符串</tag>
+        <tag>DP</tag>
         <tag>Codeforces</tag>
         <tag>KMP</tag>
       </tags>
@@ -132,8 +132,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>字符串</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>单调队列</tag>
         <tag>SAM</tag>
@@ -1210,8 +1210,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>背包 DP</tag>
         <tag>HAOI</tag>
@@ -1292,8 +1292,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>背包 DP</tag>
         <tag>群论</tag>
@@ -1661,8 +1661,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>矩阵乘法</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>COGS</tag>
         <tag>ZJOI</tag>
@@ -1676,10 +1676,10 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>快速幂</tag>
         <tag>矩阵乘法</tag>
         <tag>字符串</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>HNOI</tag>
         <tag>KMP</tag>
@@ -1874,9 +1874,9 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>AC 自动机</tag>
         <tag>字符串</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>USACO</tag>
       </tags>
@@ -1961,9 +1961,9 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>AC 自动机</tag>
         <tag>字符串</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>JSOI</tag>
       </tags>
@@ -2354,9 +2354,9 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>Dinic</tag>
         <tag>网络流</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>上下界网络流</tag>
         <tag>NOI</tag>
@@ -2399,8 +2399,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>数据结构</tag>
+        <tag>树状数组</tag>
         <tag>BZOJ</tag>
         <tag>CDQ</tag>
         <tag>分治</tag>
@@ -2414,8 +2414,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>数据结构</tag>
+        <tag>树状数组</tag>
         <tag>BZOJ</tag>
         <tag>CDQ</tag>
         <tag>分治</tag>
@@ -2623,8 +2623,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>数据结构</tag>
+        <tag>树状数组</tag>
         <tag>BZOJ</tag>
         <tag>CDQ</tag>
         <tag>分治</tag>
@@ -2639,8 +2639,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>数据结构</tag>
+        <tag>树状数组</tag>
         <tag>BZOJ</tag>
         <tag>CDQ</tag>
         <tag>分治</tag>
@@ -2667,8 +2667,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>数据结构</tag>
+        <tag>树状数组</tag>
         <tag>BZOJ</tag>
         <tag>CDQ</tag>
         <tag>分治</tag>
@@ -2896,8 +2896,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>COGS</tag>
         <tag>概率与期望</tag>
         <tag>UVa</tag>
@@ -2911,8 +2911,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>概率与期望</tag>
       </tags>
@@ -3778,8 +3778,8 @@
       </categories>
       <tags>
         <tag>安徽集训</tag>
-        <tag>DP</tag>
         <tag>树形 DP</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>SCOI</tag>
       </tags>
@@ -3947,8 +3947,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>数位 DP</tag>
         <tag>递推</tag>
         <tag>UVa</tag>
@@ -3974,8 +3974,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>计数原理</tag>
         <tag>区间 DP</tag>
         <tag>UVa</tag>
@@ -4022,8 +4022,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>背包 DP</tag>
         <tag>递推</tag>
         <tag>UVa</tag>
@@ -4590,8 +4590,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>数据结构</tag>
+        <tag>树状数组</tag>
         <tag>BZOJ</tag>
         <tag>CDQ</tag>
         <tag>分治</tag>
@@ -4648,10 +4648,10 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>数据结构</tag>
         <tag>线段树</tag>
         <tag>高级数据结构</tag>
+        <tag>DP</tag>
         <tag>BZOJ</tag>
       </tags>
   </entry>
@@ -4800,8 +4800,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>树形 DP</tag>
+        <tag>DP</tag>
         <tag>CodeVS</tag>
         <tag>背包 DP</tag>
         <tag>Tyvj</tag>
@@ -4935,8 +4935,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>字符串</tag>
+        <tag>DP</tag>
         <tag>CodeVS</tag>
         <tag>线性 DP</tag>
       </tags>
@@ -4963,8 +4963,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>树形 DP</tag>
+        <tag>DP</tag>
         <tag>CodeVS</tag>
         <tag>CTSC</tag>
       </tags>
