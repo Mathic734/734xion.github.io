@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[⌈Swpu⌋第二周 前缀和以及差分]]></title>
+    <url>%2F2022-12-27swpu%E5%89%8D%E7%BC%80%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[关于队内前缀和公式问题以及按行按列处理的一点详细解释，以及错误代码&gt; _ &lt; 直切主题 事故代码和示例代码在最下面）这两个两层 for 循环在这个代码中用来计算前缀和数组 sum。前缀和数组可以用来快速计算矩阵中子矩形的和。 在这个代码中，第一个两层 for 循环用来计算每一行的前缀和，第二个两层 for 循环用来计算每一列的前缀和。 与之前的 cal 函数相比，这个代码的两个两层 for 循环有一些不同。 在 cal 函数中，我们使用了一个叫做“二维前缀和公式”的技巧： sum[i][j] = sum [i][j-1] + sum[i-1][j] - sum[i-1][j-1] + a[i][j] 这个公式可以用来计算出任意一个位置的前缀和，而不用枚举每一个元素。 在这个代码中，我们没有使用这个公式。相反，我们使用了两个两层 for 循环来计算前缀和。第一个两层 for 循环用来计算每一行的前缀和，第二个两层 for 循环用来计算每一列的前缀和。 这两个两层 for 循环的作用与 cal 函数类似，都是用来计算前缀和的。但是，这两个两层 for 循环的实现方式不同。在 cal 函数中，我们使用了二维前缀和公式，在这个代码中，第一个两层 for 循环的作用是计算每一行的前缀和。具体来说，对于每一行 i，它的前缀和数组 sum[i] 可以表示为： sum[i][j] = sum[i][j-1] + a[i][j] 也就是说，sum[i][j]等于它左边的元素 sum[i][j-1]加上它本身 a[i][j] 的值。 第二个两层 循环的作用是计算每一列的前缀和。具体来说，对于每一列 ，它的前缀和数组 可以表示为： sum[i][j] += sum[i-1][j] 也就是说，sum[i][j] 等于它上边的元素 sum[i-1][j] 加上它本身的值。 在这个代码中，我们使用了两个两层 循环来计算前缀和。第一个两层 循环用来计算每一行的前缀和，第二个两层 循环用来计算每一列的前缀和。 之后，我们使用了一个 循环，在循环体中执行多次询问。在每次询问中，我们输入四个整数 ，表示我们想查询原矩阵中的 到 这个子矩阵的和。 然后，我们使用了一个公式来计算子矩阵的和： int res = sum[x2][y2] - sum[x2][y1 - 1] - sum[x1 - 1][y2] + sum[x1 - 1][y1 - 1]; 这个公式可以用来快速计算矩阵中子矩形的和。它的原理是： 如果我们想计算原矩阵中的 到 这个子矩阵的和，我们可以用原矩阵的前缀和数组 sum 计算出这个子矩阵的和。 具体来说，我们可以用下面的公式： sum[x2][y2] - sum[x2][y1 - 1] - sum[x1 - 1][y2] + sum[x1 - 1][y1 - 1] 这个公式的意思是：子矩阵的和等于原矩阵的前缀和数组 中 这个位置的值减去 这个位置的值，再减去这个位置的值，最后加上这个位置的值。 举个例子，如果我们想计算原矩阵中的 到 这个子矩阵的和，我们可以使用这个公式： int res = sum[4][4] - sum[4][2 - 1] - sum[2 - 1][4] + sum[2 - 1][2 - 1]; 这个公式的意思是：子矩阵的和等于原矩阵的前缀和数组 中 这个位置的值减去 这个位置的值，再减去这个位置的值，最后加上这个位置的值。 为了计算这个公式，我们需先使用前面的两个两层 循环计算出前缀和数组 。 然后，我们可以在每次询问的时候使用这个公式来快速计算子矩阵的和。 最后，我们将结果输出到屏幕上，程序就结束了。 队友人员: #include&lt;stdio.h&gt; const int N=1e3+5; int sum[N][N]; int a[N][N]; int n,m; void cal(){ for(int i = 1;i &lt;= n;i++){ for(int j = 1;j &lt;= m;j++) sum[i][j] = sum [i][j-1] + sum[i-1][j] - sum[i-1][j-1] + a[i][j]; } } int main(){ int n,m,q; scanf("%d%d%d",&amp;n,&amp;m,&amp;q); for(int i = 1;i &lt;= n;i++){ for(int j = 1;j &lt;= m;j++) scanf("%d",&amp;a[i][j]); } while (q --){ int x1,y1,x2,y2; scanf("%d%d%d%d",&amp;x1,&amp;y1,&amp;x2,&amp;y2); cal(); int res = sum[x2][y2] - sum[x1][y1]; printf("%d\n",res); } return 0; } 以及我们给出的示例代码： #include&lt;stdio.h&gt; const int N=1e3+5; int sum[N][N];//前缀和矩阵 int a[N][N];//原矩阵 int n,m,q; int main(){ scanf("%d%d%d",&amp;n,&amp;m,&amp;q); for(int i = 1;i &lt;= n;i++){ for(int j = 1;j &lt;= m;j++) scanf("%d",&amp;a[i][j]); } for(int i = 1;i &lt;= n;i++){ for(int j = 1;j &lt;= m;j++){ sum[i][j] = sum[i][j-1] + a[i][j]; } } for(int i = 1;i &lt;= n;i++){ for(int j = 1;j &lt;= m;j++) sum[i][j] += sum[i-1][j]; } while (q --){ int x1,y1,x2,y2; scanf("%d%d%d%d",&amp;x1,&amp;y1,&amp;x2,&amp;y2); int res = sum[x2][y2] - sum[x2][y1 - 1] - sum[x1 - 1][y2] + sum[x1 - 1][y1 - 1]; printf("%d\n",res); } return 0; }]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[「Sekai CTF 2022」Pafs - 树形 DP]]></title>
     <url>%2Fsekaictf-2022-pafs%2F</url>
     <content type="text"><![CDATA[给定一棵有 个节点的无根树，对每条无向边编号（ 和 被认为是同一条边），定义一种新的路径 Pafs：一条 Pafs 路径是若干条不重复的边组成的序列，序列中两个相邻的边之间必须有且仅有一个公共端点。Pafs 路径是有向的，且相邻的边不需要首尾相连，如下图： 求给定的树上共有多少条 Pafs 路径，答案 。 链接 Project SEKAI Online Judge 题解 考虑每条 Pafs 路径的形态：一定是以一条普通的路径作为主要部分，外加其中每个点都可以额外引入若干条分叉边。所以从主路径入手考虑这个问题。 对无根树进行 DFS，转化为有根树。在树上进行树形 DP，为每个节点 维护两个值： 表示，主路径在该节点的子树（外加该节点的父节点）内，主路径从下向上以该节点的父节点结束，最后一条边为该节点与其父节点相连的边，的 Pafs 路径数量； 仅对非根节点有定义 根据定义最后一条边也可以算作分叉边，但为了解题这里将其算作主路径； 仅统计从下向上一个方向，其中除单条边组成的以外，每个对应一个反转的路径； 表示，主路径在该节点的子树内，主路径经过的深度最小的点为该节点，的 Pafs 路径数量。 最终答案为所有 之和。 g(i) 对于每个节点，其每个子节点 的 中的每个 Pafs 路径均对 有贡献。从每个子节点 引入的 Pafs 路径，在到达当前节点 之后，由于最后一条边属于主路径，所以可以再加入若干条分叉边，这些可供选择分叉边即为 与其他子节点 相连的边。 设 共有 个子节点，此时一共有 条边可供选择。由于 Pafs 路径是有序的，所以分叉边的选择方案也是有序的，所以此时的方案数为：从 条边中任选一条或多条边，并组成全排列，的方案数，即 由于 的最大值为 级别（考虑菊花图），所以不能使用时间复杂度为 的算法来计算单个 。将 的前 10 项输出，可得 在 OEIS 上搜索，得到数列 A000522，并获得线性递推式 使用该递推式可在 的时间内预处理所有 值。 所以，对非根节点 s(i) 每个节点的 分为两个个部分： ，表示以该节点的父节点作为最后一条边，且这条边作为主路径，且主路径上每个点深度递减的 Pafs 路径（以及其相反的路径）数量，显然 （减 以去除单条边组成的路径被重复计算两次的情况）； ，表示主路径可分为在 的不同子树内的两部分，且主路径所有节点的最近公共祖先为 ，的 Pafs 路径数量。 对于第二部分，考虑主路径从一个子节点 向上到达当前节点，再向下到另一个子节点 。由于在 的定义中，每条 Pafs 路径均以 的边作为主路径结束，所以 之间可以引入若干条分叉边，这些分叉边可以包含与其他 个子节点相连的边，也可以包含与父节点相连的边，所以共有 种选择。所以 所以 其中 可以通过预处理所有子节点的 之和并减去 的方法来简化计算，不需要两层循环枚举分别所有子节点。 时间复杂度为 。 代码 #include &lt;cstdio&gt; #include &lt;cstdint&gt; #include &lt;vector&gt; const int64_t MOD = 1e9 + 7; struct Node { int id; std::vector&lt;Node *&gt; adj; bool visited; std::vector&lt;Node *&gt; children; int64_t g, s; }; inline void addEdge(Node *u, Node *v) { u-&gt;adj.push_back(v); v-&gt;adj.push_back(u); } std::vector&lt;int64_t&gt; p0Cache; // inline void exgcd(int64_t a, int64_t b, int64_t &amp;g, int64_t &amp;x, int64_t &amp;y) { // if (!b) g = a, x = 1, y = 0; // else exgcd(b, a % b, g, y, x), y -= x * (a / b); // } // inline int64_t inv(int64_t num) { // int64_t g, x, y; // exgcd(num, MOD, g, x, y); // return ((x % MOD) + MOD) % MOD; // } inline void preprocess(int n) { // std::vector&lt;int64_t&gt; frac(n + 1); // frac[0] = 1; // for (int i = 1; i &lt;= n; i++) frac[i] = frac[i - 1] * i % MOD; // p0Cache.resize(n + 1); // for (int i = 0; i &lt;= n; i++) { // for (int j = 0; j &lt;= i; j++) { // (p0Cache[i] += frac[i] * inv(frac[i - j]) % MOD) %= MOD; // } // printf("P0(%d) = %llu\n", i, p0Cache[i]); // } p0Cache.resize(n + 1); p0Cache[0] = 1; for (int i = 1; i &lt;= n; i++) { p0Cache[i] = (p0Cache[i - 1] * i + 1) % MOD; // printf("P0(%d) = %llu\n", i, p0Cache[i]); } } inline void dfs(Node *u) { u-&gt;visited = true; for (Node *v : u-&gt;adj) { if (!v-&gt;visited) { dfs(v); u-&gt;children.push_back(v); } } int64_t p0 = u-&gt;adj.size() &lt; 2 ? 0 : p0Cache[u-&gt;adj.size() - 2]; bool notRoot = u-&gt;adj.size() != u-&gt;children.size(); u-&gt;g = u-&gt;s = notRoot ? 1 : 0; int64_t sumOfG = 0; for (Node *ci : u-&gt;children) (sumOfG += ci-&gt;g) %= MOD; for (Node *ci : u-&gt;children) { (u-&gt;s += ci-&gt;g * p0 % MOD * ((sumOfG - ci-&gt;g + MOD + (notRoot ? 2 : 0)) % MOD) % MOD) %= MOD; (u-&gt;g += ci-&gt;g * p0 % MOD) %= MOD; } // printf("g(%d) = %llu\n", u-&gt;id, u-&gt;g); // printf("s(%d) = %llu\n", u-&gt;id, u-&gt;s); } int main() { int n; scanf("%d", &amp;n); preprocess(n); std::vector&lt;Node&gt; nodes(n); for (int i = 0; i &lt; n - 1; i++) { int u, v; scanf("%d %d", &amp;u, &amp;v); addEdge(&amp;nodes[u - 1], &amp;nodes[v - 1]); } for (int i = 0; i &lt; n; i++) { nodes[i].id = i + 1; nodes[i].visited = false; } dfs(&amp;nodes[0]); int64_t answer = 0; for (int i = 0; i &lt; n; i++) (answer += nodes[i].s) %= MOD; printf("%llu\n", answer); return 0; }]]></content>
@@ -24,11 +29,6 @@
         <tag>二分答案</tag>
         <tag>计算几何</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[博客恢复维护~]]></title>
-    <url>%2Fback%2F</url>
-    <content type="text"><![CDATA[两年前改 Hexo 改的跑不起来了，于是之后再也没有更新过这个博客。 最近迁移数据的时候突然想起这个事，于是拿出来调了一下。现在 Hexo 修好了，也兼容了新版的 Node.js，可以继续更新了。同时也把整个博客项目整理开源了，在 https://github.com/Menci/oi.men.ci。欢迎大家查阅源代码，以及帮忙修复博客内容错误。 由于我已经离开算法竞赛比较久了，所以这个博客大概不会再有内容上的更新了，只会有错误修正。将来可能会给技术和生活相关的内容开个新的博客，敬请期待~]]></content>
   </entry>
   <entry>
     <title><![CDATA[「2018 南京网络预赛」Sum - 线性筛]]></title>
@@ -89,8 +89,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>DP</tag>
+        <tag>字符串</tag>
         <tag>Codeforces</tag>
         <tag>KMP</tag>
       </tags>
@@ -132,8 +132,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>DP</tag>
+        <tag>字符串</tag>
         <tag>BZOJ</tag>
         <tag>单调队列</tag>
         <tag>SAM</tag>
@@ -386,8 +386,8 @@
       </categories>
       <tags>
         <tag>BZOJ</tag>
-        <tag>高精度</tag>
         <tag>HNOI</tag>
+        <tag>高精度</tag>
         <tag>二分</tag>
       </tags>
   </entry>
@@ -1575,8 +1575,8 @@
       <tags>
         <tag>数学</tag>
         <tag>BZOJ</tag>
-        <tag>高精度</tag>
         <tag>HNOI</tag>
+        <tag>高精度</tag>
         <tag>Prüfer 序列</tag>
       </tags>
   </entry>
@@ -1589,8 +1589,8 @@
       </categories>
       <tags>
         <tag>DP</tag>
-        <tag>CodeVS</tag>
         <tag>背包 DP</tag>
+        <tag>CodeVS</tag>
         <tag>COGS</tag>
         <tag>NOIP</tag>
       </tags>
@@ -1678,8 +1678,8 @@
       <tags>
         <tag>快速幂</tag>
         <tag>矩阵乘法</tag>
-        <tag>字符串</tag>
         <tag>DP</tag>
+        <tag>字符串</tag>
         <tag>BZOJ</tag>
         <tag>HNOI</tag>
         <tag>KMP</tag>
@@ -1874,9 +1874,9 @@
         <category>OI</category>
       </categories>
       <tags>
+        <tag>DP</tag>
         <tag>AC 自动机</tag>
         <tag>字符串</tag>
-        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>USACO</tag>
       </tags>
@@ -1961,9 +1961,9 @@
         <category>OI</category>
       </categories>
       <tags>
+        <tag>DP</tag>
         <tag>AC 自动机</tag>
         <tag>字符串</tag>
-        <tag>DP</tag>
         <tag>BZOJ</tag>
         <tag>JSOI</tag>
       </tags>
@@ -2713,8 +2713,8 @@
         <tag>学习笔记</tag>
         <tag>算法模板</tag>
         <tag>数论</tag>
-        <tag>多项式</tag>
         <tag>原根</tag>
+        <tag>多项式</tag>
       </tags>
   </entry>
   <entry>
@@ -3990,8 +3990,8 @@
       </categories>
       <tags>
         <tag>数学</tag>
-        <tag>高精度</tag>
         <tag>计数原理</tag>
+        <tag>高精度</tag>
         <tag>组合数</tag>
         <tag>POJ</tag>
         <tag>递推</tag>
@@ -4423,8 +4423,8 @@
         <tag>二分图染色</tag>
         <tag>二分答案</tag>
         <tag>NOIP</tag>
-        <tag>洛谷</tag>
         <tag>Vijos</tag>
+        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -4545,8 +4545,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>COGS</tag>
+        <tag>贪心</tag>
         <tag>网络流 24 题</tag>
       </tags>
   </entry>
@@ -4802,11 +4802,11 @@
       <tags>
         <tag>树形 DP</tag>
         <tag>DP</tag>
-        <tag>CodeVS</tag>
         <tag>背包 DP</tag>
+        <tag>CodeVS</tag>
         <tag>Tyvj</tag>
-        <tag>洛谷</tag>
         <tag>Vijos</tag>
+        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -4835,8 +4835,8 @@
       <tags>
         <tag>DP</tag>
         <tag>单调队列</tag>
-        <tag>CodeVS</tag>
         <tag>背包 DP</tag>
+        <tag>CodeVS</tag>
       </tags>
   </entry>
   <entry>
@@ -4935,8 +4935,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>DP</tag>
+        <tag>字符串</tag>
         <tag>CodeVS</tag>
         <tag>线性 DP</tag>
       </tags>
@@ -5114,8 +5114,8 @@
       </categories>
       <tags>
         <tag>DP</tag>
-        <tag>CodeVS</tag>
         <tag>背包 DP</tag>
+        <tag>CodeVS</tag>
       </tags>
   </entry>
   <entry>
